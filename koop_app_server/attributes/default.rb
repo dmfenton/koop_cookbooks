@@ -7,3 +7,4 @@ default[:koop][:port] = 80
 default[:koop][:agol][:request_workers][:host] = "127.0.0.1"
 default[:koop][:agol][:request_workers][:port] = "6379"
 default[:koop][:agol][:request_workers][:prefix] = "agol-q-devpub"
+default[:koop][:socrata][:pageLimit] = 100000
