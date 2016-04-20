@@ -9,7 +9,7 @@ apt_repository 'apt.postgresql.org' do
 end
 
 execute 'add-apt-repo' do
-  command 'add-apt-repository ppa:ubuntugis/ppa'
+  command 'add-apt-repository ppa:ubuntugis/ubuntugis-unstable'
   ignore_failure false
 end
 
