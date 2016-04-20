@@ -24,7 +24,7 @@ execute 'add-apt-repo' do
 end
 
 execute 'apt-get-update' do
-  command 'apt-get update'
+  command 'apt-get update -q'
   ignore_failure false
 end
 
@@ -54,11 +54,11 @@ package 'libpq-dev'
 package 'postgresql-9.3'
 package 'postgresql-client-9.3'
 package 'postgresql-server-dev-all'
-package 'libstdc++6'
 package 'libmapnik'
 package 'libmapnik-dev'
 package 'mapnik-utils'
 package 'python-mapnik'
+package 'libstdc++6'
 
 execute 'install pm2' do
   command 'npm install -g pm2'
