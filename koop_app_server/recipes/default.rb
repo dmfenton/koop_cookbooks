@@ -10,12 +10,17 @@ end
 
 execute 'add-apt-repo' do
   command 'add-apt-repository ppa:ubuntugis/ppa'
-  ignore_failure true
+  ignore_failure false
+end
+
+execute 'add-apt-repo' do
+  command 'add-apt-repository ppa:mapnik/v2.2.0'
+  ignore_failure false
 end
 
 execute 'apt-get-update' do
   command 'apt-get update'
-  ignore_failure true
+  ignore_failure false
 end
 
 execute 'download/install pip' do
@@ -47,8 +52,12 @@ package 'libpq-dev'
 package 'postgresql-9.3'
 package 'postgresql-client-9.3'
 package 'postgresql-server-dev-all'
+package 'libmapnik'
+package 'libmapnik-dev'
+package 'mapnik-utils'
+package 'python-mapnik'
 
 execute 'install pm2' do
   command 'npm install -g pm2'
-  ignore_failure true
+  ignore_failure false
 end
