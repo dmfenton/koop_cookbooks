@@ -18,6 +18,11 @@ execute 'add-apt-repo' do
   ignore_failure false
 end
 
+execute 'add-apt-repo' do
+  command 'add-apt-repository ppa:mapnik/v2.2.0'
+  ignore_failure false
+end
+
 execute 'apt-get-update' do
   command 'apt-get update'
   ignore_failure false
@@ -38,9 +43,6 @@ execute 'set region on aws cli' do
   ignore_failure false
 end
 
-#ppa "ppa:ubuntugis/ppa"
-#sudo add-apt-repository ppa:ubuntugis/ppa && sudo apt-get update
-
 package 'jq'
 package 'zip'
 package 'gdal-bin'
@@ -53,6 +55,10 @@ package 'postgresql-9.3'
 package 'postgresql-client-9.3'
 package 'postgresql-server-dev-all'
 package 'libstdc++6'
+package 'libmapnik'
+package 'libmapnik-dev'
+package 'mapnik-utils'
+package 'python-mapnik'
 
 execute 'install pm2' do
   command 'npm install -g pm2'
